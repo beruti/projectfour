@@ -1,0 +1,32 @@
+<section ng-show="users.checkLoggedIn()">
+  <h2>contacts</h2>
+
+  <form id="add-contact" ng-submit="contacts.add()" novalidate>
+
+
+    <div class="form-group">
+      <label for="title">Name</label>
+      <input type="text" class="form-control" id="name"  placeholder="name" ng-model="contacts.contact.name">
+    </div>
+  
+    <div class="form-group">
+      <label for="title">Quote</label>
+      <input type="text" class="form-control" id="quote"  placeholder="quote" ng-model="contacts.contact.quote">
+    </div>
+
+    <div class="form-group">
+      <label for="title">Image</label>
+      <input type="text" class="form-control" id="image"  placeholder="image" ng-model="contacts.contact.image">
+    </div>
+
+
+
+
+ <!--    <div class="form-group">
+      <label for="title">Phone Number</label>
+      <input type="text" class="form-control" id="website" name="phonenumber" placeholder="Phone Number" ng-model="contacts.contact.website">
+    </div> -->
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</section>

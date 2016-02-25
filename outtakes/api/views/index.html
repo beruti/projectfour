@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Socket Example</title>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script>
+
+		//connect to io
+		var socket = io();
+
+		// when socket hears event 'received' call function that takes a message
+		socket.on('received' , function(message){
+			// append message to html element id messages
+			$("#messages").append("<li>" + message + "</li>");
+			console.log(message)
+
+			// tell angular to listen in for changes 
+			// hey angular i've changed something and you don't about it
+			// please update everything
+			$scope.$apply();
+
+		});
+
+		getLocation();
+
+		function getLocation() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(joinRoom);
+		    } else {
+		        x.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}
+		function joinRoom(position) {
+			// establishing join-room
+		    var x = Math.round(position.coords.latitude * 10000) / 10000; 
+		    var y = Math.round(position.coords.longitude * 10000) / 10000;
+			var room = String(x)+String(y);
+			socket.emit('join-room' , room);	
+		}
+		// to establish permissions on the room you need to clarify that this is the room maker
+
+		$(function(){
+			//when form submitted call function that takes the event
+			$("#message-form").submit(function(event){
+				//stop refreshing of page
+				event.preventDefault();
+				// store input in message variable
+				var message = $("#message-input").val();
+				//emit to chat room/io a message event that takes message
+				socket.emit('message' , message);
+
+			});
+
+		})
+
+	</script>
+
+
+
+
+</head>
+<body>
+<h1>Type below</h1>
+<form id="message-form" action="">
+	<textarea id="message-input"></textarea>
+	<input type="submit" value="Send Message"/>
+</form>
+
+<ul id="messages">
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!-- 
+<h1>Home</h1>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<button ng-click='users.checkLocation()'></button>
+
+{{users.myLocation.latitude}}
+{{users.myLocation.longitude}}
+
+
+<div id="centering">
+	<div id="googlemaphomepage">
+	<h3>Google map showing the user by location </h3>
+
+	Need to include maps in script
+	need to use hackathon as reference 
+	need to populate latitude and longitude every 10 seconds or so
+
+	</div> -->
+	<!-- </div> -->
+
+
+<h2> Show all Contacts</h2>
+
+<ul class="media-list">
+  <li class="media" ng-repeat="contact in contacts.all">
+    <div id="contactinfodiv" class="media-body">
+    <img src="{{contact.image}}">
+    <br>
+    <q class="media-heading">{{ contact.quote }}</q>
+    <br>
+    <h3>{{contact.name}} </h3>
+ </li>
+</ul>
+
+
+
+</body>
+</html>

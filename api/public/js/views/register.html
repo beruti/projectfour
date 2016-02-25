@@ -1,0 +1,85 @@
+<section ng-hide="users.checkLoggedIn()">
+  <h2>Register</h2>
+
+  <!--on submittal of form call register function is usersController-->
+ <!--  form tag denotes a form - an html container that can take inputs - for submittal of data
+  form tag attributes:
+  id - used to identify a unique html element - can be used for targeting with logic/behaviour language javascript/javascript variant -used as identifier for javascript and css selectors
+  name - specifies the name of the form but also is used to reference elements in javascript OR to reference form data after a form is submitted
+  ng-submit - an angular directive that states what action to call on submittal
+  novalidate  -->
+  <form id="login" name="users.registerForm" ng-submit="users.register()" novalidate>
+
+   <!--  div tag - acts as a container for other html elements - must have a height and width
+    div tag attributes:
+    class attribute - used as identifier for javascript and css selectors
+    role - used to clarify to screen readers how a tag should be read, can neat html so less divs and classes needed
+    ng-show - an angular directive that says to show the html element it is attributed to - is conditional
+
+    {{users.error}} is an example of two-way databinding wherever else this is defined it will be updated here on the page and vice versa -->
+
+    <div class="alert alert-danger" role="alert" ng-show="(!!users.error && users.registerForm.$submitted)">{{ users.error }}</div>
+<!-- 
+    label tag - acts as a label that will be placed on page and input as DOM element
+    label tag attribute:
+    for - specifies which form element a label is bound to
+    ng-model - an angular directive - has no reference to models folder but creates a variable with the specified name that is then available for two way binding
+    ALSO
+    ng-model directive binds the value of HTML controls (input, select, textarea) to the application data
+    The ng-model directive adds/removes the following classes, according to the STATUS of the form field:
+    (these are all status describing and are all very self-describing)
+    ng-empty
+    ng-not-empty
+    ng-touched
+    ng-untouched
+    ng-valid
+    ng-invalid
+    ng-dirty
+    ng-pending
+    ng-pristine -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="users.user.username">
+    </div>
+
+    <div class="form-group">
+      <label for="fullname">Full name</label>
+      <input type="text" class="form-control" id="fullname" placeholder="Full name" ng-model="users.user.fullname">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input type="text" class="form-control" id="image" placeholder="Image URL" ng-model="users.user.image">
+    </div>
+
+   <!--  input tag - used to input data
+    input tag attribute:
+    required - an html5 validation - will not allow anything other than an email as stated by input tag type attribute and recognised by regular expression pattern -->
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email" ng-model="users.user.email" required>
+    </div>
+
+    <div class="alert alert-danger" role="alert" ng-messages="users.registerForm['email'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['email'].$invalid)">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <span ng-message="required">Email is required.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="users.user.password" required>
+    </div>
+
+    <div class="alert alert-danger" role="alert" ng-messages="users.registerForm['password'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['password'].$invalid)">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <span ng-message="required">Password is required.</span>
+    </div>
+    <!-- button tag used to denote an html button element
+    button tag attribute type - button | submit | reset
+    submit will submit form-data to specified/expected route
+    reset attribute will reset form data to its initial values -->
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</section>

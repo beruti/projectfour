@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="logging">
+<head>
+  <title>Angular Authentication</title>
+
+  <!--connect socket -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- External Files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- Internal Files -->
+  <script src="./js/app.js"></script>
+  <script src="./js/services/tokenService.js"></script>
+  <script src="./js/services/authInterceptor.js"></script>
+  <script src="./js/services/currentUser.js"></script>
+  <script src="./js/services/socketFactory.js"></script>
+  <script src="./js/models/user.js"></script>
+  <script src="./js/models/contact.js"></script>
+  <script src="./js/services/locationService.js"></script>
+  <script src="./js/controllers/usersController.js"></script>
+  <script src="./js/controllers/contactsController.js"></script>
+  <script src="./js/controllers/chatController.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body ng-controller="UsersController as users">
+  <header>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <img id="logo" src="../assets/images/danger.png">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" ui-sref-active="active" ui-sref="home">Real Talk</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="arrivalpage">Arrival</a>
+            </li> -->
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#"ui-sref="chat">Chat</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="contacts">Contacts</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="addcontact">Add Contact</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="profile">Profile</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="login">Login</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="register">Register</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header> 
+  <main class="container" ui-view></main>
+  <br>
+  <br>
+
+
+<!--   <div id="socket_chat_div">
+  <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off"/><button>Send</button>
+    </form>
+  <div> -->
+
+  <script>
+    // var socket = io();
+    // $('form').submit(function(){
+    //   console.log("hitting submit on socket")
+    //    socket.emit('hellofromclientside', $('#m').val());
+    //    $('#m').val('');
+    //    return false;
+    //  });
+    // socket.on('hellofromserverside', function(msg){
+    //    $('#messages').append($('<li>').text(msg));
+    //  });
+    // socket.on("imhereinapp.js", function(response){
+    //   console.log("this is the response in index html "+ response);
+    //  });
+  </script>
+
+</body>
+</html>
