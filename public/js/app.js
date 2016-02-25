@@ -37,7 +37,6 @@ angular
       .state('chat', {
         url: "/chat",
         templateUrl: "./js/views/chat.html"
-        //controller: "chatController as chat"
       })
       .state('contacts', {
         url: "/contacts",

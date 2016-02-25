@@ -1,25 +1,14 @@
 <!-- //<section ng-show="users.checkLoggedIn()"> -->
-
-<div id="chatbox" ng-controller="ChatController as chat">
-
-
-<h3> socket chat room should go here </h3>
-	
-<!-- <a ng-click="chat.init()">ChatTest</a>
--->
-<ul ng-repeat="message in chat.messages">
-	<li class="alternate">{{message.message}}
-	</li>
-	<li>{{message.userEmail}}</li>
-</ul>
-
-<ul id="messages"></ul>
-<form ng-submit="chat.beginchat()" action="">
-  
-  <input ng-model="chat.textinput" id="m" autocomplete="off" />
-  <button>Send</button>
-</form>
-
-
+<div id="chatbox" ng-controller="ChatController as chat">		
+	<ul ng-repeat="message in chat.messages">
+		<li class="alternate">{{message.message}}
+		</li>
+		<li>{{message.userEmail}}</li>
+	</ul>
+	<ul id="messages"></ul>
+	<form id="chatInput" ng-submit="chat.beginchat()" action="">
+	  <input ng-model="chat.textinput" id="m" autocomplete="off" />
+	  <button>Send</button>
+	</form>
 </div> 
 <!-- //</section> -->

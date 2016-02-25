@@ -1,26 +1,17 @@
-
-<h1>This is the user profile </h1>
 <section ng-show="users.checkLoggedIn()">
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
+  <div id="override" class="row">
+    <div class="profile-form-container">
       <img ng-src="{{ users.user.local.image }}">
       <div class="caption">
-      	<!-- not making successful call to api? asking for wrong data - how do you console log?-->
-      	<!-- can maybe do so in the users.checkLoggedIn()-->
-      	<!-- would be showing in brackets on page if nothing was working-->
-        <h3>{{ users.user.local.fullname | uppercase }}</h3>
-     <!--    <a ng-click="editUser()" id="useremail">{{ users.user.local.email }}</a> -->
-
-        <form ng-submit="users.editUser()">
-        <label class="glyphicon glyphicon-envelope"> Email </label>
-        <input ng-model="users.user.local.email">
-        <input class="btn btn-success" type="submit">
+        <form class="profile-form" ng-submit="users.editUser()">
+          <label> Email </label>
+          <input ng-model="users.user.local.email">
+          <input class="btn" type="submit">
         </form>
+        <a class="btn btn-danger" href="/" ng-click="users.deleteUser()"> Delete Me</a>
       </div>
     </div>
   </div>
-</section>
   
-
-<a class="btn btn-danger" href="/" ng-click="users.deleteUser()"> Delete Me</a>
+</section>
 
