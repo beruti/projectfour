@@ -4,7 +4,7 @@
 angular
   //.module('logging', ['ngResource', 'angular-jwt', 'ui.router', 'logging.filters', 'logging.directives'])
   .module('logging', ['ngResource', 'angular-jwt', 'ui.router'])
-  .constant('API', 'http://localhost:3000/api')
+  .constant('API', '/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor');
