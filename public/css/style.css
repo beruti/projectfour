@@ -1,8 +1,3 @@
-*{
-	color: blue;
-/*	background-color: #F5EDE3;
-*/}
-
 * { margin: 0; padding: 0;}
 body { font: 13px Helvetica, Arial; }
 #chatInput { 
@@ -38,10 +33,10 @@ button { background: rgb(130, 224, 255); border: none; padding: 10px; }
 body{
 	/* so sticky nav bar doesnt overlay start of text*/
 	padding-top: 60px;
-/*	background-image: url(http://images.npg.org.uk/800_800/1/5/mw00015.jpg);
+	background: url(https://40.media.tumblr.com/4aac586d1b7f1c362704a3d507191f9d/tumblr_o34gj7Ozwy1u1g5cko1_1280.jpg) no-repeat center center fixed;
 */	/*background-repeat: no-repeat;*/
-	background-size: 100%;
-	/*background-position: center;*/
+	/*background-size: 100%;*/
+	/*background-size: cover;*/
 }
 
 li{
@@ -55,12 +50,8 @@ div#chatbox{
 	width: 400px;
 	border: 4px solid #aabbcc;
 	margin: 0 auto;
+	background: #bbaacc;
 }
-/*
-#override{
-	position: relative;
-	margin: 0 auto;
-}*/
 
 form#messageForm > * {
   display: inline-block;
@@ -80,10 +71,18 @@ nav{
 
 .profile-form-container {
 	text-align: center;
+	margin-top: 7%;
 }
 
-.caption, .profile-form {
+.profile-form {
 	display: inline-block;
+}
+
+.caption{
+	display: inline-block;
+	background: #bbaacc;
+	border-radius: 5%;
+	padding: 2px;
 }
 
 .header-padding {
@@ -97,5 +96,13 @@ nav{
 .contactinfodiv {
 	width: 40%;
 	margin: 0 auto;
+	background: #bbaacc;
+	border-radius: 3%;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+#addcontactsection{
+	background: #bbaacc;
+	border-radius: 1%;
 }
 

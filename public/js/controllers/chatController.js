@@ -40,10 +40,11 @@ angular
  						  userEmail	 : self.userEmail }
  		// emit event called "message", pass it object newMessage
  		socket.emit("message", newmessage);
+ 		//console.log(messages)
  		//clear input form
  		self.textinput = "";
  		//listen for changes
- 		$scope.$apply();
+ 		//$scope.$apply();
  	}
 
  	// listen for io event
@@ -61,7 +62,7 @@ angular
  		var room = ("chatroom")
  		socket.emit('join-room', room);	
  		console.log("room joined")
- 		$scope.$apply();
+ 		//$scope.$apply();
  	}
 
  	// getLocation();
