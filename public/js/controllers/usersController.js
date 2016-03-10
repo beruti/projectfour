@@ -98,7 +98,7 @@ function UsersController(User, TokenService, $state, CurrentUser, myLocation){
     //Location is an object so you can ask for a variable or function stored within it
     // console.log("this is the geolocation function being called in the usersController on the Location service " + Location.geolocation())
     self.myLocation = myLocation.position
-    console.log(myLocation.position)
+    console.log("connecting to room "+ myLocation.position)
   }
 
   function deleteUser(){

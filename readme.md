@@ -4,7 +4,7 @@ The Idea
 
 Two existant problems in the house of commons proceedings are that: the front bench dominate discussion and that debate is prone to tangential sparring. 
 Real Talk disrupts this paradigm. It creates a localised chat room in which anyone within the grounds of the houses of parliament can raise a topic for public discussion., be that a visitor or a back bencher MP.
-Chat history is recorded and analysed to form an image of efficiency in parliament by measuring the number of times a key issue is raised, defined by the consensus data of the chatroom, in comparison with what is actualy discussed. 
+Chat history is recorded and analysed to form an image of efficiency in parliament by measuring the number of times a key issue is raised, defined by the consensus data of the chatroom, in comparison with what is actually discussed. 
 
 Technology
 

@@ -1,8 +1,7 @@
 angular
 // name of app
   .module('logging')
-  // name of service - what is a service? 
-  // a substitutable object that is wired together using a dependency injection
+  // a service substitutable object that is wired together using a dependency injection
   // calling service on the angular app name as the module "logging"
   .service('myLocation', Location);
   // a service is self returning - it automatically creates an object for you to populate and returns it 

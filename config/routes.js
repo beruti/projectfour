@@ -7,8 +7,6 @@ var authenticationsController = require('../controllers/authenticationsControlle
 
 router.post('/login', authenticationsController.login);
 router.post('/register', authenticationsController.register);
-// router.post('/api/login', authenticationsController.login);
-// router.post('/api/register', authenticationsController.register);
 
 router.route('/')
   .get(usersController.usersIndex)
