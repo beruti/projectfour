@@ -1,17 +1,13 @@
 <section ng-show="users.checkLoggedIn()">
-  <div class="row">
-    <div class="profile-form-container">
-      <img ng-src="{{ users.user.local.image }}">
-      <div class="caption">
-        <form class="profile-form" ng-submit="users.editUser()">
-          <label> Email </label>
-          <input ng-model="users.user.local.email">
-          <input class="btn" type="submit">
-        </form>
-        <a class="btn btn-danger" href="/" ng-click="users.deleteUser()"> Delete Me</a>
-      </div>
-    </div>
+ <img ng-src="{{ users.user.local.image }}">
+  <div id="profileInfoDiv">
+    <form class="profile-form" ng-submit="users.editUser()">
+      <label> Email </label>
+      <br>
+      <input ng-model="users.user.local.email">
+      <input class="profileButton" type="submit" value="Submit Changes">
+      <input class="profileButton" href="/" ng-click="users.deleteUser()" type="submit"value="Delete Me">
+      </form>
   </div>
-  
 </section>
 

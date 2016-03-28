@@ -1,10 +1,16 @@
+// when only the name of the module is passed as an argument (without array of dependencies) the 'module' method returns the specified module 
 angular
   .module('logging')
   .controller('ChatController', ChatController);
 
+//inject dependencies
  ChatController.$inject = ["Contact", "User", "$state", "CurrentUser", '$scope', 'socket', 'TokenService'];
+ // capitalise name of function as it is a constructor function
  function ChatController(Contact, User, $state, CurrentUser, $scope, socket, TokenService){
  	console.log("chat controller")
+ 	// using controllerAs syntax so this equates to $scope
+ 	// self is set to this and used to avoid scope confusion
+ 	// this refers to the ChatController object that is returned when created
  	var self = this;
 
 
@@ -79,6 +85,7 @@ angular
 
 
 
-
+ 	//dont need to explicitly return self as is done automatically (but gonna anyway for piece of mind)
+ 	return self;
 
   }

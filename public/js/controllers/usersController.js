@@ -4,13 +4,8 @@ angular
   
 
 // Here we inject the currentUser service to access the current user
-// UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser', 'myLocation', 'socket'];
-// function UsersController(User, TokenService, $state, CurrentUser, myLocation, socket){
-//var url = '/'
-
 UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser', 'myLocation'];
 function UsersController(User, TokenService, $state, CurrentUser, myLocation){
-  //var url = '/'
 
   var self = this;
 
@@ -70,7 +65,6 @@ function UsersController(User, TokenService, $state, CurrentUser, myLocation){
     self.error = null;
     User.login(self.user, handleLogin, handleError);
     //load_socket()
-    //socket.emit('join game')
   }
 
   function logout() {

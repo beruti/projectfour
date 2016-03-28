@@ -71,5 +71,6 @@ function ContactsController(Contact, User, $state, CurrentUser){
 
   self.getUserContacts();
   self.getUsers();
-  //dont need to explicitly return self as is done automatically
+  //dont need to explicitly return self as is done automatically (but gonna anyway for piece of mind)
+  return self;
 }

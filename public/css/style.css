@@ -66,43 +66,100 @@ width: 30%;
 }
 
 nav{
-	background: #aaccbb;
+	background: #f30;
 }
 
-.profile-form-container {
-	text-align: center;
-	margin-top: 7%;
+nav a{
+	color: #fff;
+	padding-right: 2%;
+}
+
+/* Profile Section*/
+
+#profileInfoDiv{
+		width: 50%;
+		margin: 0 25%;
+		text-align: center;
+		color: #000;
+		background-color: #009FE3;
+		border-radius: 3%;
+		margin-top: 20%;
+		padding: 7%;
 }
 
 .profile-form {
 	display: inline-block;
 }
 
-.caption{
-	display: inline-block;
-	background: #bbaacc;
-	border-radius: 5%;
-	padding: 2px;
+.profileButton{
+	height: 2%;
+	width: 43%;
+	background-color: rgba(255,51,0,0.5);
+	color: #fff;
+	padding: 1%;
+	margin: 0 auto;
+}
+
+.profileButton:hover{
+	height: 2%;
+	width: 43%;
+	background-color: rgb(255,51,0);
+	color: #fff;
+	padding: 1%;
+	margin: 0 auto;
 }
 
 .header-padding {
 	padding-top: 0.5em;
 }
 
+/* Contact Section*/
+
 .contact-info-container {
 	display: inline-block;
 }
 
-.contactinfodiv {
-	width: 40%;
-	margin: 0 auto;
-	background: #bbaacc;
+.contactDiv{
+	width: 50%;
+	margin: 0 25%;
+	text-align: center;
+	color: #fff;
+	background-color: #009FE3;
 	border-radius: 3%;
-	box-shadow: 10px 10px 5px #888888;
+	margin-top: 20%;
+	padding: 7%;
 }
 
-#addcontactsection{
-	background: #bbaacc;
-	border-radius: 1%;
+
+/* Registration and login*/
+
+.registrationLoginDiv{
+	text-align: center;
+	color: #fff;
+}
+
+.registerLoginTitle{
+	color: #fff;
+	text-align:center;
+}
+
+.customButton{
+	height: 2%;
+	width: 43%;
+	background-color: rgba(255,51,0,0.5);
+	color: #fff;
+}
+
+.customButton:hover{
+	height: 2%;
+	width: 43%;
+	background-color: rgb(255,51,0);
+	color: #fff;
+}
+
+/* NavBar*/
+
+.navbar-brand:hover{
+	color: #fff;
 }
 

@@ -2,16 +2,16 @@
 // app contains all the configuration and middleware
 
 angular
-  //.module('logging', ['ngResource', 'angular-jwt', 'ui.router', 'logging.filters', 'logging.directives'])
   .module('logging', ['ngResource', 'angular-jwt', 'ui.router'])
   .constant('API', '/api')
   .config(MainRouter)
+  // intercepting and tracking $http behaviour with authInterceptor service
+  // done so with a config block - gets executed during the provider registrations and configuration phase.
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor');
   });
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
-
   function MainRouter($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
