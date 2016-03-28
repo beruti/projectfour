@@ -4,6 +4,8 @@
     <form class="profile-form" ng-submit="users.editUser()">
       <label> Email </label>
       <br>
+      <!-- accessing users array, then the current user and then since the schema is nested in local and then the email address-->
+      <!-- THIS is not changing on the users socket info though - why - because the users email is being taken from the decoded token and not from the model-->
       <input ng-model="users.user.local.email">
       <input class="profileButton" type="submit" value="Submit Changes">
       <input class="profileButton" href="/" ng-click="users.deleteUser()" type="submit"value="Delete Me">

@@ -21,18 +21,32 @@ function UsersController(User, TokenService, $state, CurrentUser, myLocation){
   self.checkLocation = checkLocation;
   self.deleteUser    = deleteUser;
   self.editUser      = editUser;
-
-  // var socket = io();
-  // socket.on('connect', function(){
-  //   console.log('im connected');
-  // })
+  // empty object to be populated with data
+  self.usersTotalContacts  = {};
+  self.checkForUserContacts = checkForUserContacts;
+  self.currentUser = CurrentUser.getUser()
 
   function getUsers() {
     User.query(function(data){
-      console.log(data)
+      //console.log(data)
       self.all = data;
     });
   }
+
+  // called at bottom of page
+  function checkForUserContacts(){
+    // id is this objects current user and their id
+   var id = {id: self.currentUser._id}
+    // user is found in database and all their data is retrieved with a get request
+    User.get(id, function(data){
+      console.log(data.user)
+      // usersTotalContacts are found by going into the data object and pulling out the user property and its contacts
+      self.userInfo = data.user;
+      })
+    console.log("this is outside " + self.userInfo)
+  }
+
+  console.log(self.usersTotalContacts)
 
   function handleLogin(res) {
     console.log("give them a token!")
@@ -58,7 +72,6 @@ function UsersController(User, TokenService, $state, CurrentUser, myLocation){
     // may be going to different server now
     // issue may be caused by /api route extension in app.js
     console.log("this is self.user email "+ self.user.email)
-
   }
 
   function login() {
@@ -134,19 +147,8 @@ function UsersController(User, TokenService, $state, CurrentUser, myLocation){
     // is only in the scope
   }
 
-  // var socket = io();
-  // $('form').submit(function(){
-  //   console.log("hitting submit on socket")
-  //    socket.emit('hellofromclientside', $('#m').val());
-  //    $('#m').val('');
-  //    return false;
-  //  });
-  // socket.on('hellofromserverside', function(msg){
-  //    $('#messages').append($('<li>').text(msg));
-  //  });
-  //socket.
-
   //attach $scope.apply whenever you emit an event
 
+  self.checkForUserContacts();
   return self;
 }

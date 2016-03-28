@@ -13,8 +13,6 @@ angular
  	// this refers to the ChatController object that is returned when created
  	var self = this;
 
-
- 	//console.log("hello")
  	//make array to store chat messages
  	self.messages  = [];
  	self.beginchat = beginchat;
@@ -24,13 +22,17 @@ angular
  	self.userEmails = [];
  	self.getUserEmail = getUserEmail;
 
-
  	function getUserEmail(res){
  		var usertoken = TokenService.decodeToken();
  		console.log(usertoken.local.email)
  		self.userEmail = usertoken.local.email
  		//CurrentUser.saveUser(self.user);
  	}
+
+ 	// function getUserEmail(res){
+ 	// 	// need to access ng-model="users.user.local.email" and set to self.userEmail so that it adjusts in real time
+ 	// 	self.userEmail = 
+ 	// }
 
  	getUserEmail();
 
@@ -80,10 +82,6 @@ angular
  	//         x.innerHTML = "Geolocation is not supported by this browser.";
  	//     }
  	// }
-
-
-
-
 
  	//dont need to explicitly return self as is done automatically (but gonna anyway for piece of mind)
  	return self;

@@ -13,9 +13,7 @@ function ContactsController(Contact, User, $state, CurrentUser){
   self.users    = [];
   self.contact  = {};
   self.userContacts = {};
-  //self.message = {como: estas}
-  //var message = {como: estas}
-  //socket.emit("message")
+  self.currentUser = CurrentUser.getUser()
 
   self.getContacts = function(){
     Contact.query(function(data){
@@ -25,27 +23,12 @@ function ContactsController(Contact, User, $state, CurrentUser){
 
   self.getUserContacts = function(){
    var id = {id: self.currentUser._id}
-   console.log("hello like before")
     User.get(id, function(data){
       // console.log("hello")
-      console.log(data)
+      // console.log(data)
       self.userContacts = data.user.contacts
-      // projects have ids though - need to populate them
-      // used populate in back end and association in model
-      // gives an array of data so have to make logic and cycle over in the view of angular app
-      // self.userContacts is in the view
-       //var socket = io();
-       //var message = "hello";
-       //socket.emit("message")
-      // socket.on('received', function(message){
-      //   console.log("socketmessage")
-      // })
-      //$scope.$apply()
     })
   }
-
-  self.currentUser = CurrentUser.getUser()
-
   console.log(self.currentUser._id);
 
   self.getUsers = function(){

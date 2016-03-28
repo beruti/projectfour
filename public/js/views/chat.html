@@ -1,10 +1,10 @@
-<div id="chatbox" ng-controller="ChatController as chat">		
+<div id="chatbox" ng-controller="ChatController as chat">	
 	<ul ng-repeat="message in chat.messages">
 		<li class="alternate">{{message.message}}
 		</li>
 		<li>{{message.userEmail}}</li>
 	</ul>
-	<ul id="messages"></ul>
+	<br>
 	<form id="chatInput" ng-submit="chat.beginchat()" action="">
 	  <input ng-model="chat.textinput" id="m" autocomplete="off" />
 	  <button>Send</button>

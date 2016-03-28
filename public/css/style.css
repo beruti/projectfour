@@ -1,15 +1,4 @@
 * { margin: 0; padding: 0;}
-body { font: 13px Helvetica, Arial; }
-#chatInput { 
-	background: #aaa; 
-	padding: 3px; 
-	position: absolute; 
-	bottom: 0;
-	width: 100%;
-}
-#chatInput input {
-	width: 86%;
-}
 
 /*input { border: 0; padding: 10px; width: 85%; margin-right: .5%; }*/
 button { background: rgb(130, 224, 255); border: none; padding: 10px; }
@@ -34,23 +23,11 @@ body{
 	/* so sticky nav bar doesnt overlay start of text*/
 	padding-top: 60px;
 	background: url(https://40.media.tumblr.com/4aac586d1b7f1c362704a3d507191f9d/tumblr_o34gj7Ozwy1u1g5cko1_1280.jpg) no-repeat center center fixed;
-*/	/*background-repeat: no-repeat;*/
-	/*background-size: 100%;*/
-	/*background-size: cover;*/
+	font: 13px Helvetica, Arial;
 }
 
 li{
 	list-style-type: none;
-}
-
-div#chatbox{
-	position: relative;
-	/*height: 400px;*/
-	min-height: 10em;	
-	width: 400px;
-	border: 4px solid #aabbcc;
-	margin: 0 auto;
-	background: #bbaacc;
 }
 
 form#messageForm > * {
@@ -165,3 +142,26 @@ nav a{
 	color: #fff;
 }
 
+/* Chat Page */
+
+#chatInput { 
+	background: #aaa; 
+	padding: 3px; 
+	bottom: 0;
+	width: 100%;
+	margin-top: 20%;
+}
+#chatInput input {
+	width: 86%;
+}
+
+div#chatbox{
+	position: relative;
+	/*height: 400px;*/
+	min-height: 10em;	
+	width: 400px;
+	border: 4px solid #aabbcc;
+	margin: 0 auto;
+	background: #bbaacc;
+	border-radius: 1%;
+}
